@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  node-backend:
+    build: .
+    container_name: node-backend
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: always
